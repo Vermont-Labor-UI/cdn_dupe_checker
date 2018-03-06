@@ -22,8 +22,8 @@ def find_dupes(base_container_url, cdn_source_folder):
 if __name__ == "__main__":
     print("Searching for duplicates")
     parser = argparse.ArgumentParser(description='Generate an Autorest Client')
-    parser.add_argument('--baseContainerUrl', type=str)
-    parser.add_argument('--cdnSourceFolder', type=str)
+    parser.add_argument('--baseContainerUrl', type=str, required=True)
+    parser.add_argument('--cdnSourceFolder', type=str, required=True)
     args = parser.parse_args()
 
     dupes = find_dupes(args.baseContainerUrl, args.cdnSourceFolder)
