@@ -5,7 +5,9 @@ import requests
 
 def find_dupes(base_container_url, cdn_source_folder):
     files = []
-    for filename in glob.iglob('{0}/**/*.*'.format(cdn_source_folder), recursive=True):
+    search_path = '{0}/**/*.*'.format(cdn_source_folder)
+    print("searching {0} for files".format(search_path))
+    for filename in glob.iglob(search_path, recursive=True):
         print("\tFound file for CDN: " + filename)
         files.append(filename)
 
