@@ -13,7 +13,10 @@ def find_dupes(base_container_url, cdn_source_folder):
 
     found_dupes = []
     for file in files:
-        if requests.get(base_container_url + "/" + file).status_code == 200:
+        check_url = base_container_url + "/" + file
+        print("checking url {0} for existing file".format(check_url))
+
+        if requests.get(check_url).status_code == 200:
             print("\tERROR: Found file already in CDN: " + file)
             found_dupes.append(file)
     return found_dupes
