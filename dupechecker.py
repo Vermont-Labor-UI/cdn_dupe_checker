@@ -4,7 +4,7 @@ import os
 import requests
 
 
-def find_dupes(base_container_url, cdn_source_folder, buildId):
+def find_dupes(base_container_url, cdn_source_folder, build_id):
     os.chdir(cdn_source_folder)
     
     files = []
@@ -17,7 +17,7 @@ def find_dupes(base_container_url, cdn_source_folder, buildId):
 
     found_dupes = []
     for file in files:
-        check_url = f"{base_container_url}/{buildId}/{file}"
+        check_url = f"{base_container_url}/{build_id}/{file}"
         print()
         print(f"checking url {check_url} for existing file")
 
